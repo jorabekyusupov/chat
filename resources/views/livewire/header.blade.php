@@ -9,7 +9,14 @@
 
      <li class="nav-item dropdown has-arrow">
       <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
-       <span class="user-img"><img class="rounded-circle" src="{{ asset('assets/images/profile') . '/'. auth()->user()->image  }}" width="40" alt="Admin">
+       <span class="user-img"><img class="rounded-circle"
+        src="@if (auth()->user()->image )
+        {{ asset('assets/images/profile') . '/' . auth()->user()->image   }}
+        @else
+        {{ asset('assets/images/profile') . '/' .'user.png'   }}
+        @endif" 
+
+        width="40" alt="">
         <span class="status online"></span></span>
        <span>{{ (isset(auth()->user()->name)) ? auth()->user()->name : '' }}</span>
       </a>

@@ -11,7 +11,11 @@
            <div class="chat-profile-img">
             <div class="edit-profile-img">
 
-                    <img src="{{ asset('assets/images/profile') . '/' .auth()->user()->image  }}" alt="{{   auth()->user()->name }}">
+                    <img src="@if (auth()->user()->image )
+                    {{ asset('assets/images/profile') . '/' . auth()->user()->image   }}
+                    @else
+                    {{ asset('assets/images/profile') . '/' .'user.png'   }}
+                    @endif" alt="{{   auth()->user()->name }}">
 
 
 

@@ -26,7 +26,10 @@ class ProfileEdit extends Component
             'phone' => 'required|min:13|max:13',
             'image' =>  'nullable|file|image|mimes:jpeg,png,jpg,gif|max:2096'
         ])->validate();
-        $data['image'] = $this->UserImageUpload($data['image']);
+        if (isset($data['image'])) {
+
+            $data['image'] = $this->UserImageUpload($data['image']);
+        }
         $user = User::find(auth()->user()->id);
         $user->update($data);
         $this->dispatchBrowserEvent('closedEdit');

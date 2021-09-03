@@ -22,7 +22,15 @@
           <a>
            <div class="media">
             <span class="avatar align-self-center">
-                <img src="{{ asset('assets/images/profile') . '/'. $item->image }}" alt="">
+                <img
+                src="@if ($item->image )
+                {{ asset('assets/images/profile') . '/' . $item->image   }}
+                @else
+                {{ asset('assets/images/profile') . '/' .'user.png'   }}
+                @endif"
+
+
+                alt="">
             </span>
             <div class="media-body align-self-center text-nowrap">
              <div class="user-name">{{ $item->name }}</div>
