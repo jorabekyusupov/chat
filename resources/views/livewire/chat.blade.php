@@ -6,7 +6,7 @@
      <div class="float-left user-img m-r-10">
       @if (isset($users_chat))
        @foreach ($users_chat as $itemss)
-        <a href="profile.html" title="Jennifer Robinson"><img src="{{ asset('storage/images/profile') . '/' . $itemss->image }}" alt="" class="w-40 rounded-circle"></a>
+        <a href="profile.html" title="Jennifer Robinson"><img src="{{ asset('assets/images/profile') . '/' . $itemss->image }}" alt="" class="w-40 rounded-circle"></a>
        @endforeach
       @endif
      </div>
@@ -58,7 +58,7 @@
           <div class="chat chat-right">
            <div class="chat-avatar">
             <a href="profile.html" class="avatar">
-             <img alt="" src="{{ asset('storage/images/profile') . '/'. auth()->user()->image }}" class="img-fluid rounded-circle">
+             <img alt="" src="{{ asset('assets/images/profile') . '/'. auth()->user()->image }}" class="img-fluid rounded-circle">
             </a>
            </div>
            <div class="chat-body">
@@ -79,7 +79,7 @@
 
               <a href="profile.html" class="avatar">
 
-               <img alt="{{ $itemss->name }}" src="{{ secure_asset('storage/images/profile') . '/' . $itemss->image }}" class="img-fluid rounded-circle">
+               <img alt="{{ $itemss->name }}" src="{{ asset('assets/images/profile') . '/' . $itemss->image }}" class="img-fluid rounded-circle">
               </a>
              @endforeach
             @endif

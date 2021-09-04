@@ -14,7 +14,7 @@
         {{ asset('assets/images/profile') . '/' . auth()->user()->image   }}
         @else
         {{ asset('assets/images/profile') . '/' .'user.png'   }}
-        @endif" 
+        @endif"
 
         width="40" alt="">
         <span class="status online"></span></span>
@@ -22,6 +22,9 @@
       </a>
       <div class="dropdown-menu">
 
+
+
+            <a href="#chat_sidebar" class="dropdown-item " id="task_chat"><i class="fa fa-user"> User</i></a>
 
        <form action="{{ route('logout') }}" method="POST">
            @csrf
@@ -35,7 +38,9 @@
      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
      <div class="dropdown-menu dropdown-menu-right">
 
-
+        <li class="dropdown-item">
+            <a href="#chat_sidebar" class="float-right nav-link task-chat profile-rightbar" id="task_chat"><i class="fa fa-user">User</i></a>
+           </li>
       <form action="{{ route('logout') }}" method="POST">
        @csrf
 
