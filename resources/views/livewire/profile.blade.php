@@ -15,7 +15,7 @@
                     {{ asset('assets/images/profile') . '/' . auth()->user()->image   }}
                     @else
                     {{ asset('assets/images/profile') . '/' .'user.png'   }}
-                    @endif" alt="{{   auth()->user()->name }}">
+                    @endif" >
 
 
 

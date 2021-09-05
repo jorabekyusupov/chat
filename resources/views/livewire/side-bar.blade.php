@@ -11,7 +11,7 @@
        {{-- @if ($items->id == $item->chat_id) --}}
 
         <li wire:click="$emit('chatid', {{ $item->chat_id }},{{ $item->user->id }} )" style="cursor: pointer">
-         <a><span class="chat-avatar-sm user-img"><img src="{{ asset('assets/images/profile') . '/'. $item->user->image }}" alt="{{ $item->user->name }}" class="rounded-circle"></span> {{ $item->user->name }} </a>
+         <a><span class="chat-avatar-sm user-img"><img src="{{ asset('assets/images/profile') . '/'. $item->user->image }}" class="rounded-circle"></span> {{ $item->user->name }} </a>
         </li>
 
        {{-- @endif --}}
@@ -24,7 +24,7 @@
 
 
       <li wire:click="$emit('chatid',{{ $items->chat_id }},{{ $items->chats->users->id }})" style="cursor: pointer">
-       <a><span class="chat-avatar-sm user-img"><img src="{{ asset('assets/images/profile') . '/' . $items->chats->users->image }}" alt="{{  $items->chats->users->name }}" class="rounded-circle"></span> {{ $items->chats->users->name }} </a>
+       <a><span class="chat-avatar-sm user-img"><img src="{{ asset('assets/images/profile') . '/' . $items->chats->users->image }}"  class="rounded-circle"></span> {{ $items->chats->users->name }} </a>
       </li>
 
      @endforeach
